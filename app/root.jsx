@@ -5,7 +5,6 @@ import {
   Scripts,
   ScrollRestoration,
   useFetcher,
-  useLoaderData,
   useNavigation,
   useRouteError,
 } from '@remix-run/react';
@@ -46,39 +45,9 @@ export const links = () => [
   { rel: 'author', href: '/humans.txt', type: 'text/plain' },
 ];
 
-export const loader = async ({ request, context }) => {
-  const { url } = request;
-  const { pathname } = new URL(url);
-  const pathnameSliced = pathname.endsWith('/') ? pathname.slice(0, -1) : url;
-  const canonicalUrl = `${config.url}${pathnameSliced}`;
-
-  const { getSession, commitSession } = createCookieSessionStorage({
-    cookie: {
-      name: '__session',
-      httpOnly: true,
-      maxAge: 604_800,
-      path: '/',
-      sameSite: 'lax',
-      secrets: [context.cloudflare.env.SESSION_SECRET || ' '],
-      secure: true,
-    },
-  });
-
-  const session = await getSession(request.headers.get('Cookie'));
-  const theme = session.get('theme') || 'dark';
-
-  return json(
-    { canonicalUrl, theme },
-    {
-      headers: {
-        'Set-Cookie': await commitSession(session),
-      },
-    }
-  );
-};
-
 export default function App() {
-  let { canonicalUrl, theme } = useLoaderData();
+  const canonicalUrl = window.location.href;
+  let theme = 'dark';
   const fetcher = useFetcher();
   const { state } = useNavigation();
 
@@ -89,7 +58,6 @@ export default function App() {
   function toggleTheme(newTheme) {
     fetcher.submit(
       { theme: newTheme ? newTheme : theme === 'dark' ? 'light' : 'dark' },
-      { action: '/api/set-theme', method: 'post' }
     );
   }
 
