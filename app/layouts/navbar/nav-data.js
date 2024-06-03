@@ -1,38 +1,18 @@
-import config from '~/config.json';
-
 export const navLinks = [
   {
-    label: 'Projects',
-    pathname: '/#project-1',
+    label: 'Landing',
+    pathname: '/',
   },
   {
-    label: 'Details',
-    pathname: '/#details',
-  },
-  {
-    label: 'Articles',
-    pathname: '/articles',
-  },
-  {
-    label: 'Contact',
-    pathname: '/contact',
+    label: 'Imprint',
+    pathname: 'https://www.thi.de/sonstiges/impressum/',
   },
 ];
 
 export const socialLinks = [
   {
-    label: 'Twitter',
-    url: `https://twitter.com/${config.twitter}`,
-    icon: 'twitter',
-  },
-  {
-    label: 'Figma',
-    url: `https://www.figma.com/${config.figma}`,
-    icon: 'figma',
-  },
-  {
     label: 'Github',
-    url: `https://github.com/${config.github}`,
+    url: `https://github.com/securityinmobility/virtual-charging-station`,
     icon: 'github',
   },
 ];

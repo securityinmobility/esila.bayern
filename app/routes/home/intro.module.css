@@ -9,8 +9,9 @@
 .text {
   max-width: 1024px;
   width: 100%;
-  position: relative;
-  top: calc(var(--spaceL) * -1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
   @media (--mediaDesktop) {
     max-width: 920px;

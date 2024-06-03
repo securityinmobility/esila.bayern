@@ -1,11 +1,11 @@
 {
-  "name": "Hamish Williams",
-  "role": "Designer",
-  "disciplines": ["Developer", "Prototyper", "Animator", "Illustrator", "Modder"],
-  "url": "https://hamishw.com",
+  "name": "eSiLa - elektrisch sicher laden",
+  "role": "Hacken von",
+  "disciplines": ["Ladesäulen", "Elektrofahrzeugen", "ISO15118", "EVCC", "SECC"],
+  "url": "https://esila.bayern",
   "twitter": "@hamishMW",
   "figma": "@Hamish",
   "github": "HamishMW",
-  "repo": "https://github.com/HamishMW/portfolio",
+  "repo": "https://github.com/securityinmobility/esila.bayern",
   "ascii": "__  __  __\n\u005C \u005C \u005C \u005C \u005C\u2215\n \u005C \u005C\u2215\u005C \u005C\n  \u005C\u2215  \u005C\u2215\n"
 }
